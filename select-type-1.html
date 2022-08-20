@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Select</title>
+</head>
+<style>
+    .f-select-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .f-select-input {
+        border: none;
+        margin: 0px;
+        font-size: 14px;
+        color: #777777;
+    }
+
+    .f-select-border1 {
+        border-radius: 5px;
+        border: 1px solid #707070;
+        padding: 11px 10px;
+    }
+
+    .f-select-option {
+        font-size: 14px;
+        color: #2b193f;
+        margin-bottom: 13px;
+        cursor: pointer;
+    }
+
+    .f-select-options-wrapper {
+        list-style-type: none;
+        margin-top: 0px;
+        display: none;
+    }
+
+    /* Type 2 select border, padding and icon */
+
+    .f-select-border2 {
+        border-radius: 6px;
+        border: 1px solid #777777;
+        padding: 11px 10px;
+    }
+
+    .f-select-img2 {
+        padding: 13px 16px 13px 18px;
+        width: 42px;
+        border: 1px solid #777777;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .f-select-icon {
+        width: 7px;
+        height: 12px;
+    }
+
+    .f-select-input2 {
+        width: 100%;
+        color: #777777;
+        margin: 0;
+        font-size: 14px;
+        padding: 11px 10px 11px 10px;
+        border: 1px solid #777777;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+</style>
+
+<body>
+    <div style="width: 20%; margin: 100px auto">
+        <div class="f-select-wrapper f-select-border1">
+            <p class="f-select-input">Make a selection</p>
+            <div>
+                <img class="f-select-icon" src="./images/active-radio-button.png" alt="" />
+            </div>
+        </div>
+        <ul class="f-select-options-wrapper f-select-border1">
+            <li class="f-select-option">Option A</li>
+            <li class="f-select-option">Option B</li>
+            <li class="f-select-option">Option C</li>
+        </ul>
+    </div>
+
+    <div style="width: 20%; margin: 100px auto">
+        <div class="f-select-wrapper">
+            <p class="f-select-input2">Make a selection</p>
+            <div class="f-select-img2">
+                <img class="f-select-icon" class="" src="./images/active-radio-button.png" alt="" />
+            </div>
+        </div>
+        <ul class="f-select-options-wrapper f-select-border2">
+            <li class="f-select-option">Option 1</li>
+            <li class="f-select-option">Option 2</li>
+            <li class="f-select-option">Option 3</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const option = document.getElementsByClassName("f-select-option");
+    const selectWrapper = document.getElementsByClassName("f-select-wrapper");
+
+    for (i = 0; i < option.length; i++) {
+        option[i].addEventListener("click", (e) => {
+            e.target.parentNode.previousElementSibling.firstElementChild.textContent =
+                e.target.textContent;
+            e.target.parentNode.previousElementSibling.firstElementChild.style.color =
+                "#2B193F";
+            e.target.parentNode.style.display = "none";
+            console.log(e.target.textContent);
+        });
+    }
+
+    for (i = 0; i < selectWrapper.length; i++) {
+        selectWrapper[i].addEventListener("click", (e) => {
+            if (
+                e.target !== e.currentTarget &&
+                e.target.parentNode.parentNode === e.currentTarget
+            ) {
+                e.target.parentNode.parentNode.nextElementSibling.style.display ===
+                    "none"
+                    ? (e.target.parentNode.parentNode.nextElementSibling.style.display =
+                        "block")
+                    : (e.target.parentNode.parentNode.nextElementSibling.style.display =
+                        "none");
+            } else if (
+                e.target !== e.currentTarget &&
+                e.target.parentNode === e.currentTarget
+            ) {
+                e.target.parentNode.nextElementSibling.style.display === "none"
+                    ? (e.target.parentNode.nextElementSibling.style.display = "block")
+                    : (e.target.parentNode.nextElementSibling.style.display = "none");
+            } else {
+                if (e.target.nextElementSibling.style.display === "block") {
+                    e.target.nextElementSibling.style.display = "none";
+                } else e.target.nextElementSibling.style.display = "block";
+            }
+        });
+    }
+</script>

@@ -1,0 +1,66 @@
+ /* floating window */
+ .floating-window-wrapper { border: 1px solid red; background: #FCFCFC; max-width: 292px; border-radius: 3px; padding: 10px;}
+ .floating-window-wrapper .ctx-edit-btn {all:unset; display: flex; cursor: pointer; align-items: center; column-gap: 13px; background: #DEDEDE; padding: 8px 0 8px 19px; border-radius: 3px; width: 100%; width: -moz-available; width: -webkit-fill-available; width: fill-available;}
+ .floating-window-wrapper .ctx-edit-btn > img { max-width: 13px; }
+ .floating-window-wrapper .ctx-edit-btn > span { font-size: 14px; color: #505050; }
+ .floating-window-wrapper .ctx-text-with-bg { background: #EEEEEE; width: fit-content; color: #373737; padding: 8px 6px; font-size: 13px; cursor: pointer;}
+ 
+ .floating-window-wrapper .btn-fill-group { display: flex; align-items: center; column-gap: 5px; }
+ .floating-window-wrapper .btn-fill-group > .display-red { height: 28px; width: 28px; border-radius: 50%; background: #D5080A; }
+ .floating-window-wrapper .btn-fill-group > .display-white { height: 28px; width: 28px; border-radius: 50%; background: #fff; border: 1px solid #9f9f9f; }
+ .floating-window-wrapper .btn-fill-group > .display-blue { height: 28px; width: 28px; border-radius: 50%; background: #003B75; border: 1px solid #9f9f9f; }
+ .floating-window-wrapper .btn-fill-group > .display-black { height: 28px; width: 28px; border-radius: 50%; background: #000; border: 1px solid #9f9f9f; }
+ .floating-window-wrapper .btn-fill-group > span { font-size: 13px; color:#333333; }
+ .floating-window-wrapper .external-link-group { }
+ 
+ .floating-window-wrapper .ctx-select {
+ background-color: white;
+ border: thin solid #E8E8E8;
+ border-radius: 3px;
+ display: inline-block;
+ font: inherit;
+ line-height: 24px;
+ width: 100%;
+ padding-left: 10px;
+ height: 34px;
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ }
+ .floating-window-wrapper .ctx-select.ctx-arrows {
+ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3klEQVRIS+3VMU9CMRTF8d8zBL+aizoQFhx0kUk33RzdYMNFXUFnYeGrYYyaJiUxJHDLSxodbNKpfeffc9/pbaPyaCrr+3OA++z4rtT5Pg5GuMnCY9yWQEoBE1xhlUUP8YDrCBIB0vojLvGO0yz4hm4JJAKcYYoPHGOZAUdYoIMBXrc5iQAHeMlzviFygj7O8dkWEJU4XI8chALRhn9AVKHf70VRTHu4wFfbmKZLNKt50dLBnna0imcMd/2I0phWa3Y/D1e1Xa9BCZJG0VuQNpaWKMx72xS1Fl5/WN3BN+AgJhnZQlq4AAAAAElFTkSuQmCC');
+ background-position: calc(100% - 8px), 100% 0;
+ background-size: 24px 24px;
+ background-repeat: no-repeat;
+ }
+ .floating-window-wrapper .ctx-select.ctx-arrows:focus {
+ border-color: #333333;
+ outline: 0;
+ }
+ 
+ .ctx-gen-checkbox { display: flex; align-items: center; }
+ .ctx-gen-checkbox .custom-checkbox { display: block; position: relative; padding-left: 30px; cursor: pointer; font-size: 22px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+ .ctx-gen-checkbox .custom-checkbox input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0;}
+ .ctx-gen-checkbox .checkmark { position: absolute; top: -16px; left: 0; height: 20px; width: 20px; background-color: var(--white); border-radius: 2px; border: 1px solid var(--star-dust); }
+ .ctx-gen-checkbox .custom-checkbox:hover input ~ .checkmark { background-color: #fff; }
+ .ctx-gen-checkbox .custom-checkbox input:checked ~ .checkmark { background-color: var(--star-dust);}
+ .ctx-gen-checkbox .checkmark:after { content: ""; position: absolute; display: none;}
+ .ctx-gen-checkbox .custom-checkbox input:checked ~ .checkmark:after { display: block;}
+ .ctx-gen-checkbox .custom-checkbox .checkmark:after { left: 6px; top: 2px; width: 5px; height: 12px; border: solid white; border-width: 0 2px 2px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+ .ctx-gen-checkbox .label-tags { font-size: 14px; color: #505050; height: 30px; font-weight: 500;}
+ .ctx-gen-checkbox .single-option-check { display: flex; align-items: center; }
+
+ .speaker-logo {
+    height: 163px;
+    width: 163px;
+ }
+
+ .speaker-logo-div {
+    margin: 10px;
+ }
+
+ .fww-text-13 { font-size: 13px !important; }
+ .fww-text-13b { font-size: 13px !important; font-weight: 500; }
+ .fww-text-12 { font-size: 12px !important;; }

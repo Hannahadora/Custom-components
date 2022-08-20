@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="c-wrapper">
+        <div class="c-signin-notice">
+            <button type="button" class="c-btn c-btn-green-pry c-mr-20">SIGN IN</button>
+            <span class="c-202F65 c-text-14">Existing customers sign in for easier checkout.</span>
+        </div>
+
+        <div class="c-cart-info-wrapper">
+            <div class="c-cart-info-sect1">
+                <div class="c-cart-info-sect1a" id="cartStep1">
+                    <div class="c-cart-info-head">
+                        1. Order Summary
+                    </div>
+
+                    <div class="c-cart-items">
+                        <div>
+                            <img src="/cart-images/cart-item/Group 44240.png" alt="">
+                        </div>
+                        <div class="c-item-info">
+                            <div>
+                                <span class="c-bold">Cabin Suitcase</span>
+                                <span class="c-bold">$156.95</span>
+                            </div>
+                            <span class="c-i-prop">Generic brand</span><br>
+                            <span class="c-i-prop">Size: XS</span><br>
+                            <span class="c-i-prop">Quantity: 1</span><br>
+                        </div>
+                    </div>
+
+                    <div class="c-cart-items">
+                        <div>
+                            <img src="/cart-images/cart-item/Group 44240.png" alt="">
+                        </div>
+                        <div class="c-item-info">
+                            <div>
+                                <span class="c-bold">Name of Product</span>
+                                <span class="c-bold">$156.95</span>
+                            </div>
+                            <span class="c-i-prop">Design name goes here</span><br>
+                            <span class="c-i-prop">Size: XS</span><br>
+                            <span class="c-i-prop">Quantity: 1</span><br>
+                        </div>
+                    </div>
+
+                    <div class="c-cart-info-head">
+                        2. Contact Information
+                    </div>
+
+                    <div class="c-cart-form-1">
+                        <input class="c-cart-input" type="email" placeholder="Email Address">
+                        <div>For order confirmation and tracking information</div>
+                    </div>
+
+                    <div class="c-cart-info-head">
+                        3. Shipping Information
+                    </div>
+
+                    <form class="c-cart-form-2">
+                        <div>
+                            <input type="checkbox">
+                            <label class="c-cart-label" for="">Send this order as a gift</label>
+                        </div>
+
+                        <div>
+                            <label class="c-cart-label" for="">Add an optional gift message</label><br>
+                            <input class="c-cart-input" type="text" placeholder="">
+                        </div>
+
+
+                        <input class="c-cart-input" type="text" placeholder="First Name">
+                        <input class="c-cart-input" type="text" placeholder="Last Name">
+                        <input class="c-cart-input" type="text" placeholder="Phone Number">
+                        <input class="c-cart-input" type="text" placeholder="Company Name (optional)">
+
+                        <input class="c-cart-input" type="text" placeholder="Street Address Line 1">
+
+                        <span>+ Street Address 2</span>
+
+                        <input class="c-cart-input" type="text" placeholder="City">
+                        <select class="c-cart-input" name="" id="">
+                            <option value="0">State/Province</option>
+                            <option value="rivers">Rivers</option>
+                            <option value="lagos">Lagos</option>
+                        </select>
+                        <input class="c-cart-input" type="text" placeholder="Zip/Postal Code">
+                        <input class="c-cart-input" type="text" placeholder="United States">
+
+
+                        <button onclick="openStepTwo()" type="button" class="c-btn c-btn-green-pry">NEXT </button>
+                    </form>
+
+                </div>
+
+
+                <div class="c-cart-info-sect1b" id="cartStep2">
+
+                    <div class="c-cart-info-head">
+                        2. Contact Information
+                    </div>
+
+
+                    <div class="c-add-n-deli">
+                        <div class="c-shipping-address">
+                            <span class="c-bold">
+                                Your Shipping Address
+                            </span>
+                            <address>
+                                <span>First Last Name</span><br>
+                                <span>Street Address Line 1</span><br>
+                                <span>City, State</span><br>
+                                <span>United States,</span><br>
+                                <span>Zip code</span><br>
+                                <span>Phone Number</span><br>
+                                <span>Email address</span><br>
+                            </address>
+
+                            <a href="">Change Shipping Address</a>
+                        </div>
+
+                        <div class="c-delivery-details">
+                            <span class="c-bold">
+                                Choose Delivery Date
+                            </span>
+
+                            <div>
+                                <label for="">Standard Shipping</label><br><br>
+                                <div class="c-cart-input c-bg-green c-ffffff">AUG 24TH <span>FREE</span></div>
+                            </div><br>
+
+                            <div>
+                                <label for="">Rush Shipping</label><br><br>
+                                <div class="c-cart-input">Aug 5th <span>$20.00</span></div>
+                            </div>
+
+                            <div>
+                                <label for="">Is this a GIFT?</label><br>
+                                <input type="checkbox">
+                                <label class="c-cart-label" for="">YES, please hide the price and seal it with a kiss
+                                    from me.</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="c-cart-info-head" id="header4">
+                        4. Billing Information
+                    </div>
+
+                    <div class="c-apply-sect" id="codeSect">
+                        <input class="c-cart-input" type="text" placeholder="Add Promo Code">
+                    </div>
+
+                    <div class="c-cart-info-head">
+                        4a. Select a Payment Type
+                    </div>
+
+                    <div class="c-card-details" id="cardDetailsSect">
+                        <input class="c-cart-input" type="text" placeholder="Debit/Credit Card">
+
+
+                        <div>
+                            <input type="checkbox">
+                            <label class="c-cart-label" for="">Use credit card on file</label>
+                        </div>
+
+                        <span class="c-bold">
+                            Enter Credit Card Information
+                        </span>
+
+                        <form action="">
+                            <input class="c-cart-input" type="text" placeholder="Card Number">
+                            <input class="c-cart-input" type="text" placeholder="Month">
+                            <input class="c-cart-input" type="text" placeholder="Year">
+                            <input class="c-cart-input" type="text" placeholder="CVV">
+                        </form>
+
+                        <div class="">
+                            <button type="button" class="c-btn" disabled>Use My Shipping Address</button>
+                            <button type="button" class="c-btn" disabled>Enter Billing Address</button>
+                            <button type="button" class="c-btn c-btn-green-pry--small">Use My Shipping Address</button>
+                            <button onclick="useBillingAddress()" type="button" class="c-btn c-btn-green-sec">Enter
+                                Billing Address</button>
+                        </div>
+                    </div>
+
+                    <div id="billingAddSect">
+                        <div class="c-billing-address">
+                            <div class="c-shipping-address">
+                                <span class="c-bold">
+                                    Your Billing Address
+                                </span>
+                                <address>
+                                    <span>First Last Name</span><br>
+                                    <span>Street Address Line 1</span><br>
+                                    <span>City, State</span><br>
+                                    <span>United States,</span><br>
+                                    <span>Zip code</span><br>
+                                    <span>Phone Number</span><br>
+                                    <span>Email address</span><br>
+                                </address>
+
+                                <a href="">Change Shipping Address</a>
+                            </div>
+
+                            <div class="c-billing-info">
+                                <span class="c-bold">
+                                    Your Billing Information
+                                </span>
+                                <div>
+                                    <div>Payment Type</div><br><br>
+                                    <div>Credit Card Name</div>
+                                    <div>$Total Dollar Amount</div>
+                                </div>
+
+                                <div>
+                                    <a href="">Change Shipping Address</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-order-btn">
+                            <button type="button" class="c-btn c-btn-green-pry">PLACE YOUR ORDER</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="c-cart-info-sect2">
+                <div>
+                    <span>MY CART</span>
+                    <div>
+                        <div class="c-cart-summary">
+                            <span>Subtotal:</span>
+                            <span>$156.95</span>
+                        </div>
+                        <div class="c-cart-summary">
+                            <span>Shipping:</span>
+                            <span>FREE Shipping</span>
+                        </div>
+                        <div class="c-cart-summary">
+                            <span>Sales Tax:</span>
+                            <span>$0.00</span>
+                        </div>
+                        <div class="c-cart-summary">
+                            <span>TOTAL:</span>
+                            <span>$156.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    const step1 = document.getElementById('cartStep1')
+    const step2 = document.getElementById('cartStep2')
+    const cardDetails = document.getElementById('cardDetailsSect')
+    const billingInfo = document.getElementById('billingAddSect')
+    const header4 = document.getElementById('header4')
+    const codeSect = document.getElementById('codeSect')
+
+    function openStepTwo() {
+        step1.style.display = 'none'
+        step2.style.display = 'block'
+    }
+
+    function useBillingAddress() {
+        header4.style.display = 'none'
+        codeSect.style.display = 'none'
+        cardDetails.style.display = 'none'
+        billingInfo.style.display = 'block'
+    }
+
+</script>
+
+</html>

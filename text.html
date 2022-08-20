@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .tab-header {
+        color: #667499;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .bar-container {
+        background-color: #F0F4FE;
+        width: 100%;
+        border-radius: 16px;
+        margin-top: 16px;
+        height: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    .bar-container>div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 5%;
+    }
+
+    .bar-container>div>div:nth-of-type(2) {
+        border: 1px solid red;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+    }
+
+    .active-tab {
+        color: #14171f;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .progress-red {
+        width: 100%;
+        background-color: #fe4d3c;
+        color: white;
+        height: 4px;
+        border-radius: 16px;
+    }
+
+    .mainG {
+        width: 80%;
+        margin: 40px auto
+    }
+
+    .digits {
+        width: 80%;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        justify-content: space-between;
+    }
+</style>
+
+<body>
+    <ul class="digits">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div class="mainG">
+        <div class="bar-container">
+            <div id="track">
+                <div class="progress-red"></div>
+                <div id="eclipse" onclick="slideProgress()"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const eclipse = document.getElementById('eclipse')
+    const track = document.getElementById('track')
+    const barg = document.querySelector('.bar-container')
+
+    function slideProgress() {
+        if (track.style.width === '5%') {
+            track.style.width = '20%'
+        }
+    }
+    barg.addEventListener("click", function (e) {
+        console.log("Hello")
+
+        console.log("yes", e)
+
+        if (barg.style.width === "100") (
+            console.log("yes", bar.offset.left)
+        )
+    })
+</script>
+
+</html>

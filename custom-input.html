@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="width: 20%; margin: 100px auto;">
+        <div class="custom-dropdown-wrapper">
+            <div class="input-wrapper">
+                <div class="selected-values-wrapper"></div>
+                <input type="text" class="x-input" placeholder="Select">
+            </div>
+            <div class="x-dropdown">
+                <ul class="x-list-items">
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    .custom-dropdown-wrapper {
+        width: 100%;
+    }
+
+    .selected-values-wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 1px solid #c4c4c4;
+        border-radius: 4px;
+        padding: 10px 8px;
+    }
+
+    .x-input {
+        width: 50px;
+        background-color: #fff;
+        color: #000;
+        padding: 5px;
+        border: none;
+        font-size: 14px;
+    }
+
+    .x-input:focus {
+        outline: none;
+    }
+
+    .selected-value {
+        display: flex;
+        align-items: center;
+        width: auto;
+        height: 25px;
+        background-color: blue;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: none;
+        font-size: 14px;
+        margin-right: 4px;
+        margin-bottom: 4px;
+    }
+
+
+    .x-dropdown {
+        display: none;
+        margin-top: 16px;
+        padding: 8px 10px;
+        border: 1px solid #c4c4c4;
+        border-radius: 4px;
+    }
+
+    .x-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 4px;
+        cursor: pointer;
+    }
+
+    .x-item:hover {
+        background-color: bisque;
+        width: 100%;
+    }
+
+    .x-list-items {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 16px;
+    }
+
+    .x-delete-icon {
+        padding: 4px;
+        background-color: #fff;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        font-weight: bold;
+        font-size: 14px;
+        color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+</style>
+
+</html>
+
+<script>
+
+    const listBox = document.querySelector('.x-list-items')
+    const inputField = document.querySelector('.x-input')
+    const valuesWrapper = document.querySelector('.selected-values-wrapper')
+    const inputWrapper = document.querySelector('.input-wrapper')
+    const dropdown = document.querySelector('.x-dropdown')
+    const listItem = document.getElementsByClassName('x-item')
+
+    inputField.addEventListener('input', searchArray)
+    inputField.addEventListener('blur', removeEmptyInput)
+
+    const itemArray = [
+        "Computer",
+        "Agric",
+        "Geography",
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Mathematics",
+        "English",
+        'Economics'
+    ];
+
+    // Display items in dropdown
+    for (i = 0; i < itemArray.length; i++) {
+        var li = document.createElement('li');
+        listBox.appendChild(li);
+        li.innerHTML += itemArray[i];
+        li.className = "x-item"
+        li.addEventListener('click', addToInput)
+    }
+
+    // Add click function to the items
+    let inputArray = []
+    function addToInput(e) {
+        var p = document.createElement('p');
+        var span = document.createElement('span');
+        var div = document.createElement('div');
+        div.className = 'selected-value'
+        p.innerHTML = e.target.innerHTML ? e.target.innerHTML : e.target.value
+        p.style.marginRight = '16px';
+        span.innerHTML += 'X';
+        span.className = "x-delete-icon"
+        span.addEventListener('click', deleteInput)
+        div.appendChild(p)
+        div.appendChild(span)
+        valuesWrapper.appendChild(div)
+        inputArray.push(p.innerHTML)
+        dropdown.style.display = 'none'
+    }
+
+    // Delete an ainput
+    function deleteInput(e) {
+        e.target.parentNode.remove();
+    }
+
+    // Show Dropdown and create a new input
+    inputWrapper.addEventListener('click', openDropdown)
+    function openDropdown() {
+        dropdown.style.display = 'block'
+    }
+
+    // FIlter Input and sort through the array
+    function searchArray(e) {
+        console.log(listItem)
+        for (i = 0; i < listItem.length; i++) {
+            if (listItem[i].innerText.toLowerCase().indexOf(e.target.value) > -1) {
+                listItem[i].style.display = "";
+            } else {
+                listItem[i].style.display = "none";
+            }
+        };
+    }
+
+    // Remove Inputs that the value is not listed on the array
+    function removeEmptyInput(e) {
+        if (e.target.value) {
+            const ddx = itemArray.find(x => x.toLowerCase() === e.target.value.toLowerCase());
+            if (!ddx) {
+                e.target.value = ''
+            } else {
+                addToInput(e)
+                e.target.value = ''
+            }
+        }
+    }
+
+
+
+</script>
